@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary-color: #f0e842;
+    --secondary-color: #17224B;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.primary-button{
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--secondary-color);
+    padding: 5px 35px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+    justify-items: center;
+}

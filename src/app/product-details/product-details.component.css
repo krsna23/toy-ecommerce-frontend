@@ -1,0 +1,40 @@
+.details{
+    padding: 20px 100px;
+    flex-direction: column;
+    background-color: #fafaf4;
+}
+
+.pic{
+    width: 65%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.top-column{
+    padding: 10px 0 0 30px;
+}
+
+.price{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.name{
+    font-size: 26px;
+    color: #7E7B2F;
+}
+
+.location{
+    font-size: 20px;
+    color: #1E641D;
+}
+
+.details-col{
+    padding: 20px;
+    flex-direction: column;
+}
+
+.heading1{
+    font-size: 22px;
+    font-weight: 500;
+}

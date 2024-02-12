@@ -1,0 +1,54 @@
+/* https://source.unsplash.com/ */
+
+.home-products{
+    padding: 35px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fafaf4;
+}
+
+.toy-card{
+    border: solid;
+    border-color: #80761d1a;
+    background-color: #F5F5F5;
+    height: 400px;
+    width: 250px;
+    margin: 5px;
+    font-size: 18px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    
+}
+
+.toy-img{
+    width: 90%;
+    height: 65%;
+    padding: 5%;
+}
+
+.toy-info{
+    width: 900px;
+    padding: 0 5%;
+}
+
+.fa-solid{
+    margin: 0 5px;
+}
+.price{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.category{
+    color: #185617;
+}
+
+.name{
+    font-size: 20px;
+}
+
+.location{
+    width: 100%;
+    height: fit-content;
+}

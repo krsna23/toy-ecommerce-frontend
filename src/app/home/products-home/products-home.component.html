@@ -1,0 +1,13 @@
+<section class="home-products flex">
+    <div class="toy-list" *ngFor="let toy of toyList">
+        <div class="toy-card pointer" [routerLink]='["/details", toy.id]'>
+            <img src={{toy.photo}} alt="" class="toy-img">
+            <div class="toy-info">
+                <div class="price"><i class="fa-solid fa-indian-rupee-sign"></i>{{toy.price}}</div>
+                <div class="name">{{toy.name}}</div>
+                <div class="category">{{toy.category}}</div>
+                <div class="location">{{toy.location}}</div>
+            </div>    
+        </div>
+    </div>
+</section>
