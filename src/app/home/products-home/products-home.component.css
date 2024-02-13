@@ -15,7 +15,7 @@
     height: 400px;
     width: 250px;
     margin: 5px;
-    font-size: 18px;
+    font-size: 16px;
     overflow: hidden;
     overflow-wrap: break-word;
     
@@ -36,7 +36,7 @@
     margin: 0 5px;
 }
 .price{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .name{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .location{
