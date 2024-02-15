@@ -1,0 +1,90 @@
+<section class="form-section">
+    
+    <div class="flex radio">
+        <div >
+            <input type="radio" id="donate" name="formType" value="donate" checked (click)="donationChange()"/>
+            <label for="donate" class="radio-option">Donate</label>
+        </div>
+
+        <div>
+            <input type="radio" id="sell" name="formType" value="sell" (click)="sellChange()"/>
+            <label for="sell" class="radio-option">Sell</label>
+        </div>
+    </div>
+    
+    <form action="" *ngIf=this.donate class="login-container">
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Name">
+        </div>
+
+        <div class="input-row">
+            <label for="email" class="label"></label>
+            <input type="text" class="input" placeholder="category">
+        </div>
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Age Range" >
+        </div>
+
+        <div class="input-row">
+            <textarea type="text-box" class="input details" placeholder="Details" ></textarea>
+        </div>
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Used For" >
+        </div>
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Location" >
+        </div>
+
+        <div class="flex row">
+            <div class="pics">
+                Add Photos <i class="fa-solid fa-file-circle-plus"></i>
+            </div>
+            <button class="primary-button" action="sumbit">Donate</button>
+        </div>    
+    </form>
+
+    <form action="" *ngIf=this.sell class="login-container">
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Name">
+        </div>
+
+        <div class="input-row">
+            <label for="email" class="label"></label>
+            <input type="text" class="input" placeholder="price">
+        </div>
+
+        <div class="input-row">
+            <label for="email" class="label"></label>
+            <input type="text" class="input" placeholder="category">
+        </div>
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Age Range" >
+        </div>
+
+        <div class="input-row">
+            <textarea type="text-box" class="input details" placeholder="Details" ></textarea>
+        </div>
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Used For" >
+        </div>
+
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Location" >
+        </div>
+
+        <div class="flex row">
+            <div class="pics">
+                Add Photos <i class="fa-solid fa-file-circle-plus"></i>
+            </div>
+            <button class="primary-button" action="sumbit">Sell</button>
+        </div>    
+    </form>
+
+</section>

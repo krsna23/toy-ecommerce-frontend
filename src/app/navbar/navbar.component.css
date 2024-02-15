@@ -1,0 +1,52 @@
+.logo{
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.navbar{
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-right: 0;
+}
+
+.logo-image{
+    width: 45px;
+    height: 40px;
+    padding-right: 5px;
+}
+
+.logo-heading{
+    align-self: center;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+.navs{
+    width: 60%;
+    justify-content: space-evenly;
+    font-size: 14px;
+    align-items: center;
+}
+
+
+.search-box{
+    height: 25px;
+    margin-right: 10px;
+    padding-left: 5px;
+    
+}
+
+.search-box:hover {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+
+.nav{
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.menu:hover{
+    scale: 1.1;
+    border-bottom: dotted;
+}

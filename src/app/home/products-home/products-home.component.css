@@ -12,19 +12,20 @@
     border: solid;
     border-color: #80761d1a;
     background-color: #F5F5F5;
-    height: 400px;
+    height: 300px;
     width: 250px;
     margin: 5px;
-    font-size: 16px;
+    font-size: 14px;
     overflow: hidden;
     overflow-wrap: break-word;
-    
+
 }
 
 .toy-img{
     width: 90%;
     height: 65%;
     padding: 5%;
+    padding-bottom: 5px;
 }
 
 .toy-info{
@@ -36,7 +37,7 @@
     margin: 0 5px;
 }
 .price{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -45,10 +46,13 @@
 }
 
 .name{
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.location{
-    width: 100%;
-    height: fit-content;
+span {
+    width: 230px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

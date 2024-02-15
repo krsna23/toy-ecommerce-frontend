@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, NgIf],
+  imports: [CommonModule,],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
