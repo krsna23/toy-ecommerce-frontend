@@ -1,0 +1,9 @@
+.hero-section{
+    width: 90%;
+    margin: 10px auto;
+    background-image: url('/assets/hero.png');
+    height: 70vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

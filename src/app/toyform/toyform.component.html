@@ -1,5 +1,5 @@
-<section class="form-section">
-    
+<section class="form-section ">
+
     <div class="flex radio">
         <div >
             <input type="radio" id="donate" name="formType" value="donate" checked (click)="donationChange()"/>
@@ -12,79 +12,85 @@
         </div>
     </div>
     
-    <form action="" *ngIf=this.donate class="login-container">
+    <!---------------------------- Donation Section ----------------------------->
+
+    <form action="" *ngIf="donate" class="form-container" [formGroup]="donateForm" (ngSubmit)="onSubmit()">
 
         <div class="input-row">
-            <input type="text" class="input" placeholder="Name">
+            <input type="text" class="input" placeholder="Name" formControlName="name">
         </div>
-
+    
         <div class="input-row">
             <label for="email" class="label"></label>
-            <input type="text" class="input" placeholder="category">
+            <input type="text" class="input" placeholder="Category" formControlName="category">
         </div>
-
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Age Range" >
+            <input type="text" class="input" placeholder="Age Range" formControlName="ageRec">
         </div>
-
+    
         <div class="input-row">
-            <textarea type="text-box" class="input details" placeholder="Details" ></textarea>
+            <textarea type="text-box" class="input details" placeholder="Details" formControlName="details"></textarea>
         </div>
-
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Used For" >
+            <input type="text" class="input" placeholder="Used For" formControlName="usedFor">
         </div>
-
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Location" >
+            <input type="text" class="input" placeholder="Location" formControlName="location">
         </div>
-
+        <p class="invalid" *ngIf="donateForm.status=='INVALID'">*Fill in all the sections.</p>
+    
         <div class="flex row">
-            <div class="pics">
-                Add Photos <i class="fa-solid fa-file-circle-plus"></i>
+            <div class="pics pointer">
+                <!-- <input type="file" (change)="onChangeFile($event)"> -->
+                 Add Photos <i class="fa-solid fa-file-circle-plus"></i>
             </div>
-            <button class="primary-button" action="sumbit">Donate</button>
-        </div>    
+            <button class="primary-button" action="submit" >Donate</button>
+        </div>
     </form>
 
-    <form action="" *ngIf=this.sell class="login-container">
+    <!-------------------------- Submit Section ----------------------------->
 
+    <form action="" *ngIf="sell" class="form-container" [formGroup]="sellForm" (ngSubmit)="onSellSubmit()">
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Name">
+            <input type="text" class="input" placeholder="Name" formControlName="name">
         </div>
-
-        <div class="input-row">
-            <label for="email" class="label"></label>
-            <input type="text" class="input" placeholder="price">
-        </div>
-
+    
         <div class="input-row">
             <label for="email" class="label"></label>
-            <input type="text" class="input" placeholder="category">
+            <input type="text" class="input" placeholder="Price" formControlName="price">
         </div>
-
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Age Range" >
+            <label for="email" class="label"></label>
+            <input type="text" class="input" placeholder="Category" formControlName="category">
         </div>
-
+    
         <div class="input-row">
-            <textarea type="text-box" class="input details" placeholder="Details" ></textarea>
+            <input type="text" class="input" placeholder="Age Range" formControlName="ageRec">
         </div>
-
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Used For" >
+            <textarea type="text-box" class="input details" placeholder="Details" formControlName="details"></textarea>
         </div>
-
+    
         <div class="input-row">
-            <input type="text" class="input" placeholder="Location" >
+            <input type="text" class="input" placeholder="Used For" formControlName="usedFor">
         </div>
-
+    
+        <div class="input-row">
+            <input type="text" class="input" placeholder="Location" formControlName="location">
+        </div>
+    
         <div class="flex row">
-            <div class="pics">
+            <div class="pics pointer">
                 Add Photos <i class="fa-solid fa-file-circle-plus"></i>
             </div>
-            <button class="primary-button" action="sumbit">Sell</button>
-        </div>    
+            <button class="primary-button" action="submit">Sell</button>
+        </div>
     </form>
 
 </section>

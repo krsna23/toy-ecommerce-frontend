@@ -21,11 +21,11 @@
     width: 22px;
 }
 
-.login-container{
+.form-container{
     width: 350px;
     height: 328px;
     margin: 20px auto 0;
-    background-color: var(--background-color2);
+    background-color: #eae140;
     height: fit-content;
     padding-bottom: 13px;
 }
@@ -38,42 +38,29 @@ form{
     padding: 8px;
 }
 
-.details{
-    height: 40px;
-}
-.label{
-    left: 50px;
-    position: absolute;
-    padding-top: 8px;
-}
-
 .input{
-    padding-left: 15px;
+    padding: 0 15px;
     margin: 0 auto;
     border: none;
     height: 25px;
-    padding-bottom: 2px;
     color: #000c;
+}
+
+
+.details{
+    height: 60px;
+    padding-top: 10px;
+}
+
+.invalid{
+    color: red;
+    margin-left: -60px;
 }
 
 .primary-button{
     margin-top: 20px;
 }
 
-p{
-    padding-top: 50px;
-}
-
-.signup-button{
-    border: none;
-    background-color: transparent;
-    color: blue;
-    text-decoration: underline;
-}
-
-.label{
-    display: none;
-}
 
 .row{
     justify-content: space-between;
