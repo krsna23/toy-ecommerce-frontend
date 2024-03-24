@@ -9,4 +9,5 @@ export interface Toy {
     usedFor: string;
     location:string;
     price: number;
+    userId: number;
 }

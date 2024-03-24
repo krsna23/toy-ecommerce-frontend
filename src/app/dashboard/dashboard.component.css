@@ -1,0 +1,71 @@
+.login-message{
+    color: red;
+    padding: 10px;
+}
+
+.dashboard{
+    padding: 30px;
+}
+
+.home-products{
+    padding: 35px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fafaf4;
+}
+
+.toy-card{
+    border: solid;
+    border-color: #80761d1a;
+    background-color: #F5F5F5;
+    height: 335px;
+    width: 250px;
+    margin: 5px;
+    font-size: 14px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+
+}
+
+.toy-img{
+    width: 90%;
+    height: 65%;
+    padding: 5%;
+    padding-bottom: 5px;
+}
+
+.toy-info{
+    width: 900px;
+    padding: 0 5%;
+}
+
+.fa-solid{
+    margin: 0 5px;
+}
+.price{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.category{
+    color: #185617;
+}
+
+.name{
+    font-size: 16px;
+}
+
+span {
+    width: 230px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button{
+    width: 70%;
+    margin: auto;
+    margin-left: 15%;
+}

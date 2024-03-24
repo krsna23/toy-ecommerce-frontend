@@ -29,6 +29,7 @@ form{
     position: relative;
     margin-top: 20px;
 }
+
 .input-row{
     padding: 8px;
 }
@@ -52,7 +53,7 @@ form{
 }
 
 p{
-    padding-top: 50px;
+    padding: 20px;
 }
 
 .signup-button{
@@ -65,4 +66,8 @@ p{
 
 .label{
     display: none;
+}
+
+.info{
+    padding-top: 0;
 }

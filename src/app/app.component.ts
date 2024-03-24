@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeroComponent } from './home/hero/hero.component';
 import { FooterComponent } from './home/footer/footer.component';
-
 
 @Component({
   selector: 'app-root',
@@ -18,6 +17,14 @@ import { FooterComponent } from './home/footer/footer.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'toy-ecommerce';
+  
+  constructor(private router: Router) {}
+
+  onUserDataReceived(userData: any) {
+    console.log("appComponent");
+    // Pass user data to Dashboard route
+    this.router.navigate(['/dashboard'], { state: { userData } });
+  }
+
   
 }

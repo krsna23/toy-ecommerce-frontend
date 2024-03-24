@@ -1,7 +1,22 @@
 <section class="home-products flex">
+    <div class="toy-list" *ngFor="let toy of toyList1">
+        <div class="toy-card pointer" [routerLink]='["/details", toy.id]'>
+            <img src="./././assets/"{{toy.photo}} alt="" class="toy-img">
+            <div class="toy-info">
+                <div class="price"><i class="fa-solid fa-indian-rupee-sign"></i>{{toy.price}}</div>
+                <span class="name">{{toy.name}}</span>
+                <div class="category">{{toy.category}}</div>
+                <span class="location">{{toy.location}}</span>
+            </div>    
+        </div>
+    </div>
+
+    <!-- const baseURL: string = "./././assets/"+selectedFileName;
+    this.photoUrl = baseURL + selectedFileName; -->
+
     <div class="toy-list" *ngFor="let toy of toyList">
         <div class="toy-card pointer" [routerLink]='["/details", toy.id]'>
-            <img src={{toy.photo}} alt="" class="toy-img">
+            <img src="./././assets/{{ toy.photo }}" alt="" class="toy-img">
             <div class="toy-info">
                 <div class="price"><i class="fa-solid fa-indian-rupee-sign"></i>{{toy.price}}</div>
                 <span class="name">{{toy.name}}</span>

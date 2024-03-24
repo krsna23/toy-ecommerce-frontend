@@ -1,6 +1,6 @@
 <section class="details">
     <div class="top-body flex">
-        <img src={{toy?.photo}} alt="Toy Pic" class="pic">
+        <img src="./././assets/{{ toy?.photo }}" alt="Toy Pic" class="pic">
         <div class="top-column">
             <h2 class="price">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
@@ -8,13 +8,13 @@
             </h2>
             <h3 class="name">{{toy?.name}}</h3>
             <div class="category">Category: {{toy?.category}}</div>
-            <div class="uploaded-user">Uploaded by:</div>
+            <!-- <div class="uploaded-user">Uploaded by:</div> -->
             <div class="location">{{toy?.location}}</div>
         </div>
     </div>
     <div class="details-col flex">
         <div class="heading1">Details:</div>
-        Recommended Age: {{toy?.ageRange}}
-        <div class="details-body">{{toy?.details}}</div>
+        <!-- Recommended Age: {{toy?.ageRange}} -->
+        <div class="details-body">Contact details: {{toy?.details}}</div>
     </div>
 </section>

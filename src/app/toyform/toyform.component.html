@@ -1,5 +1,7 @@
 <section class="form-section ">
-
+    <p style="padding-top:15px;border-radius:5px;font-size:16px;color:#721c24;margin:0 0 10px; width: 75%; margin: auto;">
+        {{this.userError}}   
+    </p>
     <div class="flex radio">
         <div >
             <input type="radio" id="donate" name="formType" value="donate" checked (click)="donationChange()"/>
@@ -12,85 +14,94 @@
         </div>
     </div>
     
-    <!---------------------------- Donation Section ----------------------------->
+    <!-- Donation Section -->
+    <form *ngIf="donate" class="form-container" [formGroup]="donateForm" (ngSubmit)="onSubmit()">
 
-    <form action="" *ngIf="donate" class="form-container" [formGroup]="donateForm" (ngSubmit)="onSubmit()">
-
         <div class="input-row">
-            <input type="text" class="input" placeholder="Name" formControlName="name">
+            <input type="text" class="input" placeholder="Toy name" formControlName="name" required>
+            <div *ngIf="donateForm.get('name')?.invalid && donateForm.get('name')?.errors?.['required']" class="error-msg dev">Name is required.</div>
         </div>
     
         <div class="input-row">
-            <label for="email" class="label"></label>
-            <input type="text" class="input" placeholder="Category" formControlName="category">
+            <input type="text" class="input" placeholder="Category" formControlName="category" required>
+            <div *ngIf="donateForm.get('category')?.invalid && donateForm.get('category')?.errors?.['required']" class="error-msg dev">Category is required.</div>
         </div>
     
         <div class="input-row">
-            <input type="text" class="input" placeholder="Age Range" formControlName="ageRec">
+            <textarea type="text-box" class="input details" placeholder="Contact Details(Enter Name and Ph. number)" formControlName="details" required></textarea>
+            <div *ngIf="donateForm.get('details')?.invalid && donateForm.get('details')?.errors?.['required']" class="error-msg dev">Contact Details are required.</div>
         </div>
     
         <div class="input-row">
-            <textarea type="text-box" class="input details" placeholder="Details" formControlName="details"></textarea>
+            <input type="text" class="input" placeholder="Used For (eg. 2 years)" formControlName="usedFor" required>
+            <div *ngIf="donateForm.get('usedFor')?.invalid && donateForm.get('usedFor')?.errors?.['required']" class="error-msg dev">Used For is required.</div>
         </div>
     
         <div class="input-row">
-            <input type="text" class="input" placeholder="Used For" formControlName="usedFor">
+            <input type="text" class="input" placeholder="Location" formControlName="location" required>
+            <div *ngIf="donateForm.get('location')?.invalid && donateForm.get('location')?.errors?.['required']" class="error-msg dev">Location is required.</div>
         </div>
-    
-        <div class="input-row">
-            <input type="text" class="input" placeholder="Location" formControlName="location">
-        </div>
-        <p class="invalid" *ngIf="donateForm.status=='INVALID'">*Fill in all the sections.</p>
     
         <div class="flex row">
-            <div class="pics pointer">
-                <!-- <input type="file" (change)="onChangeFile($event)"> -->
-                 Add Photos <i class="fa-solid fa-file-circle-plus"></i>
+            <input type="file" formControlName="photo" (change)="onFileSelected($event)" required class="photo-input">
+            <div *ngIf="donateForm.get('photo')?.invalid && donateForm.get('photo')?.errors?.['required']" class="error-msg dev" style="padding-top: 0;">Photo is required.</div>
+            <div *ngIf="!donateForm.valid || !sellForm.valid">
+                <p class="error-msg dev" style="color:rgb(193, 4, 4); padding-top: 10px;">Please fill in all the required fields.</p>
             </div>
-            <button class="primary-button" action="submit" >Donate</button>
+            <p style="margin: 2px auto; font-size: 16px; color: green;">{{successfulMessage}}</p>
+            <button class="primary-button" action="submit" [disabled]="donateForm.invalid">Donate</button>
         </div>
     </form>
 
-    <!-------------------------- Submit Section ----------------------------->
+    <!-- Sell Section -->
 
-    <form action="" *ngIf="sell" class="form-container" [formGroup]="sellForm" (ngSubmit)="onSellSubmit()">
-    
+    <!-- <p>{{ this.errorMessage }}</p> -->
+
+    <form *ngIf="sell" class="form-container" [formGroup]="sellForm" (ngSubmit)="onSellSubmit()" style="height: 495px;">
+
         <div class="input-row">
-            <input type="text" class="input" placeholder="Name" formControlName="name">
+            <input type="text" class="input" placeholder="Toy name" formControlName="name" required>
+            <div *ngIf="sellForm.get('name')?.invalid && sellForm.get('name')?.errors?.['required']" class="error-msg dev">Name is required.</div>
         </div>
-    
+
         <div class="input-row">
-            <label for="email" class="label"></label>
-            <input type="text" class="input" placeholder="Price" formControlName="price">
+            <input type="text" class="input" placeholder="Price" formControlName="price" required>
+            <div *ngIf="sellForm.get('price')?.invalid && sellForm.get('price')?.errors?.['required']" class="error-msg dev">Price is required.</div>
         </div>
-    
+
         <div class="input-row">
-            <label for="email" class="label"></label>
-            <input type="text" class="input" placeholder="Category" formControlName="category">
+            <input type="text" class="input" placeholder="Category" formControlName="category" required>
+            <div *ngIf="sellForm.get('category')?.invalid && sellForm.get('category')?.errors?.['required']" class="error-msg dev">Category is required.</div>
         </div>
-    
+
         <div class="input-row">
-            <input type="text" class="input" placeholder="Age Range" formControlName="ageRec">
+            <textarea type="text-box" class="input details" placeholder="Contact Details(Enter Name and Ph. number)" formControlName="details" required></textarea>
+            <div *ngIf="sellForm.get('details')?.invalid && sellForm.get('details')?.errors?.['required']" class="error-msg dev">Contact Details are required.</div>
         </div>
-    
+
         <div class="input-row">
-            <textarea type="text-box" class="input details" placeholder="Details" formControlName="details"></textarea>
+            <input type="text" class="input" placeholder="Used For(eg. 2 years)" formControlName="usedFor" required>
+            <div *ngIf="sellForm.get('usedFor')?.invalid && sellForm.get('usedFor')?.errors?.['required']" class="error-msg dev">Used For is required.</div>
         </div>
-    
+
         <div class="input-row">
-            <input type="text" class="input" placeholder="Used For" formControlName="usedFor">
+            <input type="text" class="input" placeholder="Location" formControlName="location" required>
+            <div *ngIf="sellForm.get('location')?.invalid && sellForm.get('location')?.errors?.['required']" class="error-msg dev">Location is required.</div>
         </div>
-    
-        <div class="input-row">
-            <input type="text" class="input" placeholder="Location" formControlName="location">
-        </div>
-    
+
         <div class="flex row">
-            <div class="pics pointer">
-                Add Photos <i class="fa-solid fa-file-circle-plus"></i>
+            <input type="file" formControlName="photo" (change)="onFileSelected($event)" required class="photo-input">
+            <div *ngIf="sellForm.get('photo')?.invalid && sellForm.get('photo')?.errors?.['required']" class="error-msg dev" style="padding-top: 0;">Photo is required.</div>
+            <div *ngIf="!donateForm.valid || !sellForm.valid">
+                <p class="error-msg dev" style="color:rgb(193, 4, 4); padding-top: 10px;">All the fields are required.</p>
             </div>
+            <p style="margin: 2px auto; font-size: 16px; color: green;">{{successfulMessage}}</p>
             <button class="primary-button" action="submit">Sell</button>
+    
         </div>
     </form>
 
+        <!-- Main Validation -->
+
+    <p style="background:#f8d7da;border:1px solid #f5c6cb;padding:15px;border-radius:5px;font-size:16px;color:#721c24;margin:0 0;">SecondPlay: Connects buyers & sellers. Exercise caution. SecondPlay not liable for disputes.</p>
 </section>

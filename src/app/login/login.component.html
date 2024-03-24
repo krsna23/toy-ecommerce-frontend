@@ -1,29 +1,56 @@
+<p style="background:#f8d7da;border:1px solid #f5c6cb;padding:15px;border-radius:5px;font-size:16px;color:#721c24;margin:0 0 20px; width: 75%; margin: auto;">
+  SecondPlay: Connects buyers & sellers. Exercise caution. SecondPlay not liable for disputes. </p>
 <section class="login-section">
     <div class="login-col">
         <h2 class="title" *ngIf=this.login>Login <img src="././assets/Vector.png" alt="" class="logo"></h2>
         <h2 class="title" *ngIf=this.signup>Signup <img src="././assets/Vector.png" alt="" class="logo"></h2>
     </div>
     <div class="login-container">
-        <form action="" >
+        <form [formGroup]="authForm">
             <div class="input-row">
-                <label for="email" class="label" >Email:</label>
-                <input type="text" class="input" placeholder="Email">
+              <label for="email" class="label">Email:</label>
+              <input type="text" class="input" placeholder="Email" formControlName="email">
             </div>
             <div class="input-row">
-                <label for="email" class="label"></label>
-                <input type="text" class="input" placeholder="Password">
+              <label for="password" class="label">Password:</label>
+              <input type="password" class="input" placeholder="Password" formControlName="password">
             </div>
-            <div class="input-row">
-                <label for="email" class="label" >Confirm Password:</label>
-                <input type="text" class="input" placeholder="Confirm Password" *ngIf=this.signup>
+            <div class="input-row" *ngIf="this.signup">
+              <label for="confirmPassword" class="label">Confirm Password:</label>
+              <input type="password" class="input" placeholder="Confirm Password" formControlName="confirmPassword">
             </div>
-            <div class="input-row">
-                <label for="email" class="label">Contact Number</label>
-                <input type="text" class="input" placeholder="Ph Number" *ngIf=this.signup>
+            <div class="input-row" *ngIf="this.signup">
+              <label for="contactNumber" class="label">Contact Number:</label>
+              <input type="text" class="input" placeholder="Contact Number" formControlName="contactNumber">
             </div>
-            <button class="primary-button" action="sumbit" *ngIf=this.login>Login</button>
-            <button class="primary-button" action="sumbit" *ngIf=this.signup>Sign up</button>
-        </form>
-        <p class="info" *ngIf=this.login>Don't have an account? <button class="signup-button pointer" (click)="signupClicked()">Sign up!</button></p>
-    </div>
+          
+            <div *ngIf="authForm.get('email')!.errors?.['required'] && authForm.get('email')!.touched">
+              Email is required.
+            </div>
+            <div *ngIf="!authForm.get('email')!.errors?.['required'] && authForm.get('email')!.errors?.['email'] && authForm.get('email')!.touched">
+              Please enter a valid email.
+            </div>
+            <div *ngIf="authForm.get('password')!.errors?.['required'] && authForm.get('password')!.touched">
+              Password is required.
+            </div>
+            <div *ngIf="authForm.get('confirmPassword')!.errors?.['required'] && authForm.get('confirmPassword')!.touched">
+              Confirm Password is required.
+            </div>
+            <div *ngIf="!authForm.get('confirmPassword')!.errors?.['required'] && authForm.get('confirmPassword')!.errors?.['mismatch'] && authForm.get('confirmPassword')!.touched">
+              Passwords do not match.
+            </div>
+            <div *ngIf="authForm.get('contactNumber')!.errors?.['pattern'] && authForm.get('contactNumber')!.touched">
+              Please enter a valid number.
+            </div>
+          
+          
+            <button type="submit" class="primary-button" (click)="loginClick()" *ngIf="!this.signup">Login</button>
+            <button type="submit" class="primary-button" (click)="signupClick()" *ngIf="this.signup">Sign up</button>
+          </form>
+          <p style="color: red;margin: 0;padding: 5px;">{{this.userError}}</p>
+          <p style="color: rgb(29, 85, 8);margin: 0;padding: 0;" >{{this.signupSuccess}}</p>
+          <p style = "color: rgb(6, 85, 6); font-size: 16px;">{{this.loginMessage}}</p>
+          <p class="info" *ngIf=this.login>Don't have an account? <button class="signup-button pointer" (click)="signupClicked()">Sign up!</button></p>
+          <p class="info" *ngIf=this.signup>Login Now: <button class="signup-button pointer" (click)="loginClicked()"> Login!</button></p>
+      </div>
 </section>

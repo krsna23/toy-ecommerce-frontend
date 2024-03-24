@@ -14,15 +14,23 @@ import { Toy } from '../product/product';
 export class ProductDetailsComponent {
   route = inject(ActivatedRoute);
 
-  productService = inject(ProductService);
   toy: Toy | undefined;
 
-  constructor(){
+  constructor( private productService: ProductService){
   
   const toyId = Number(this.route.snapshot.params['id']);
-  console.log(toyId);
-  this.toy = this.productService.getProductById(toyId);
+  console.log("toyId",toyId);
+  this.productService.getProductById(toyId).subscribe(
+    (data: Toy) => {
+      this.toy = data;
+      console.log(this.toy);
+    },
+    (error) => {
+      this.toy = this.productService.getFirstId(toyId);
+      console.log('Error fetching toy details:', error);
+    });
   
   console.log(this.toy);
-}
+
   }
+}

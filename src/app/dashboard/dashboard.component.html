@@ -1,0 +1,22 @@
+<div class="dashboard">
+
+    <h1 class="login-message">{{ this.message }}</h1>
+    <h1>{{this.welcomeMessage}}</h1>
+    <h2>You will be able to view toys here</h2>
+
+    <section class="home-products flex">
+
+        <div class="toy-list" *ngFor="let toy of toyList">
+            <div class="toy-card pointer">
+                <img src="./././assets/{{ toy.photo }}" alt="" class="toy-img">
+                <div class="toy-info">
+                    <div class="price"><i class="fa-solid fa-indian-rupee-sign"></i>{{toy.price}}</div>
+                    <span class="name">{{toy.name}}</span>
+                    <div class="category">{{toy.category}}</div>
+                    <span class="location">{{toy.location}}</span>
+                </div> 
+                <button (click)="removeToy(toy.id)">Remove</button>
+            </div>
+        </div>
+    </section>
+</div>

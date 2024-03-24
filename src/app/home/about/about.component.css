@@ -36,3 +36,20 @@
     height: 55px;
     background-color: var(--background-color2);
 }
+
+
+.disclaimer {
+    background-color: #f8d7da; /* Use a light red background to draw attention */
+    border: 1px solid #f5c6cb; /* Add a subtle border */
+    padding: 15px; /* Add some padding for better readability */
+    margin-bottom: 20px; /* Add some space below the disclaimer */
+    border-radius: 5px; /* Add rounded corners for a softer look */
+    font-size: 16px; /* Set a comfortable font size */
+    color: #721c24; /* Use a darker color for text */
+    width: 75%;
+    margin: auto;
+  }
+  
+  .disclaimer p {
+    margin: 10px 0; /* Add spacing between paragraphs */
+  }
